@@ -9,8 +9,8 @@
 <ul>
     <li><strong>Nacionalidad:</strong> @Model.Nationality</li>
     <li><strong>Fecha de nacimiento:</strong> @Model.Birthday != null ? DateTime.ParseExact(Model.Birthday, "dd/MM/yyyy", null).ToString("dd/MM/yyyy") : "No disponible"</li>
-    <li><strong>Número:</strong> @Model.Number ?? "No disponible"</li>
-    <li><strong>Más información:</strong> <a href="@Model.Url" target="_blank">Wikipedia</a></li>
+    <li><strong>Número:</strong> @Model.Number"</li>
+    <li><strong>Más información:</strong> <a href="@Model.Url" target="_blank">INFORMACION</a></li>
 </ul>
 
-<a class="btn btn-secondary" href="@Url.Action("Index")">Volver a la Lista</a>
+<a class="btn btn-secondary" href="@Url.Action("Index")">Volver</a>
