@@ -1,0 +1,39 @@
+﻿@model List<Driver>
+
+@{
+    ViewData["Title"] = "Lista de Conductores";
+}
+
+<h2>Lista de Conductores</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Nacionalidad</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var driver in Model)
+        {
+            <tr>
+                <td>@driver.Name</td>
+                <td>@driver.Nationality</td>
+                <td><a class="btn btn-primary" href="@Url.Action("Details", "Driver", new { id = driver.DriverId })">Ver Detalles</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Paginación -->
+<nav>
+    <ul class="pagination">
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+            </li>
+        }
+    </ul>
+</nav>

@@ -1,0 +1,16 @@
+﻿@model Driver
+
+@{
+    ViewData["Title"] = "Detalles del Conductor";
+}
+
+<h2>@Model.Name @Model.Surname</h2>
+
+<ul>
+    <li><strong>Nacionalidad:</strong> @Model.Nationality</li>
+    <li><strong>Fecha de nacimiento:</strong> @Model.Birthday != null ? DateTime.ParseExact(Model.Birthday, "dd/MM/yyyy", null).ToString("dd/MM/yyyy") : "No disponible"</li>
+    <li><strong>Número:</strong> @Model.Number ?? "No disponible"</li>
+    <li><strong>Más información:</strong> <a href="@Model.Url" target="_blank">Wikipedia</a></li>
+</ul>
+
+<a class="btn btn-secondary" href="@Url.Action("Index")">Volver a la Lista</a>
