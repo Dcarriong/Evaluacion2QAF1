@@ -8,7 +8,7 @@
 
 <ul>
     <li><strong>Nacionalidad:</strong> @Model.Nationality</li>
-    <li><strong>Fecha de nacimiento:</strong> @Model.Birthday != null ? DateTime.ParseExact(Model.Birthday, "dd/MM/yyyy", null).ToString("dd/MM/yyyy") : "No disponible"</li>
+    <li><strong>Fecha de nacimiento:</strong> @Model.Birthday != null ? DateTime.ParseExact(Model.Birthday, "dd/MM/yyyy", null).ToString("dd/MM/yyyy") : "FECHA"</li>
     <li><strong>Número:</strong> @Model.Number"</li>
     <li><strong>Más información:</strong> <a href="@Model.Url" target="_blank">INFORMACION</a></li>
 </ul>
